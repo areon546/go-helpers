@@ -1,4 +1,4 @@
-package github.com/areon546/GoHelpers
+package helpers
 
 import (
 	"fmt"
