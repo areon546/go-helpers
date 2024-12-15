@@ -22,7 +22,7 @@ func Handle(err error) {
 	}
 }
 
-func search[T any](item T, arr []T) (index int) {
+func Search[T any](item T, arr []T) (index int) {
 	index = -1
 	for i, v := range arr {
 		if reflect.DeepEqual(v, item) {
