@@ -16,7 +16,7 @@ func Printf(s string, a ...any) { print(format(s, a...)) }
 
 func Format(s string, a ...any) string { return fmt.Sprintf(s, a...) }
 
-func CheckError(err error) {
+func Handle(err error) {
 	if err != nil {
 		log.Fatal(err)
 	}
