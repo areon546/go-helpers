@@ -11,7 +11,7 @@ import (
 
 func Print(a ...any) { fmt.Println(a...) }
 
-func Printf(s string, a ...any) { print(format(s, a...)) }
+func Printf(s string, a ...any) { print(Format(s, a...)) }
 
 func Format(s string, a ...any) string { return fmt.Sprintf(s, a...) }
 
