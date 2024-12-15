@@ -32,17 +32,10 @@ func search[T any](item T, arr []T) (index int) {
 	return index
 }
 
-func convertToInteger(s string) (int, error) {
+func ConvertToInteger(s string) (int, error) {
 	i, err := strconv.Atoi(s)
 	if err != nil {
 		return i, err
 	}
 	return i, err
-}
-
-func handle(err error) {
-	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
-	}
 }
