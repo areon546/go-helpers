@@ -36,13 +36,11 @@ func Handle(err error) {
 
 func AssertEquals(t testing.TB, expected, result fmt.Stringer) {
 	t.Helper()
-	
     helpers.AssertEquals(t, expected, result)
 }
 
 func AssertEqualsInt(t testing.TB, expected, result int) {
 	t.Helper()
-
 	helpers.AssertEqualsInt(t, expected, result)
 }
 
@@ -55,7 +53,5 @@ func AssertNoError(t testing.TB, err error) {
 	t.Helper()
 	AssertError(t, err, nil)
 }
-
-
 
 ```
