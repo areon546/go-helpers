@@ -3,16 +3,10 @@ package helpers
 import (
 	"errors"
 	"fmt"
-	"log"
 	"reflect"
 	"testing"
 )
 
-func Handle(err error) {
-	if err != nil {
-		log.Fatal(err)
-	}
-}
 func AssertEquals(t testing.TB, expected, result fmt.Stringer) {
 	t.Helper()
 	if reflect.DeepEqual(expected, result) {

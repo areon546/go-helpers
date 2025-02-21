@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/areon546/go-helpers"
+	"github.com/areon546/go-helpers/helpers"
 )
 
 func TestSearch(t *testing.T) {
