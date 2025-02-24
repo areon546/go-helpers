@@ -1,7 +1,7 @@
 # GoHelpers
 Go helper methods for me
 
-Contains a fileIO library and a helper library. 
+Contains a helper library with commonly used functions across the board. 
 
 Below is a template for simplifying imports. 
 ```go
