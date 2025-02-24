@@ -28,3 +28,11 @@ func SearchWithFunction[T any](item T, arr []T, fn Comparer) (index int) {
 func Search[T any](item T, arr []T) (index int) {
 	return SearchWithFunction(item, arr, reflect.DeepEqual)
 }
+
+func AreEven(a, b int) bool {
+	return (a%2 == 0) && (b%2 == 0)
+}
+
+func IsEven(n int) bool {
+	return n%2 == 0
+}

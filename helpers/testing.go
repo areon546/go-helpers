@@ -30,6 +30,18 @@ func AssertEqualsInt(t testing.TB, expected, result int) {
 
 }
 
+func AssertEqualsBool(t testing.TB, expected, result bool) {
+	t.Helper()
+
+	if expected == result {
+		return
+	}
+
+	t.Log(expected, result)
+
+	t.Errorf("Booleans are not equal. \nexpected: %t \nresult: %t", expected, result)
+}
+
 func AssertError(t testing.TB, got, want error) {
 	t.Helper()
 
