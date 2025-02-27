@@ -42,6 +42,17 @@ func AssertEqualsBool(t testing.TB, expected, result bool) {
 	t.Errorf("Booleans are not equal. \nexpected: %t \nresult: %t", expected, result)
 }
 
+func AssertEqualsObject(t testing.TB, expected, result any) {
+	t.Helper()
+	if reflect.DeepEqual(expected, result) {
+		return
+	}
+
+	t.Log(expected, result)
+
+	t.Errorf("Variables are not equal, \nexpected: %s \nresult:   %s", expected, result)
+}
+
 func AssertError(t testing.TB, got, want error) {
 	t.Helper()
 

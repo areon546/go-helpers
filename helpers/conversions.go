@@ -10,10 +10,9 @@ func ConvertToInteger(s string) (int, error) {
 	return i, err
 }
 
-// dont think they are necessary honestly but here still
-func BytesToString(b []byte) (s string) {
+func BytesToString(b []byte) string {
 	return string(b)
 }
-func StringToBytes(s string) (b []byte) {
+func StringToBytes(s string) []byte {
 	return []byte(s)
 }
