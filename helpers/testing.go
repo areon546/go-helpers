@@ -7,16 +7,23 @@ import (
 	"testing"
 )
 
-func AssertEquals(t testing.TB, expected, result fmt.Stringer) {
+func AssertEquals(t testing.TB, expected, result string) {
 	t.Helper()
 	if reflect.DeepEqual(expected, result) {
 		return
 	}
 
-	t.Log(expected.String(), result.String())
+	t.Log(expected, result)
 
 	t.Errorf("Variables are not equal, \nexpected: %s \nresult: %s", expected, result)
 }
+
+func AssertEqualsStringer(t testing.TB, expected, result fmt.Stringer) {
+	t.Helper()
+
+	AssertEquals(t, expected.String(), result.String())
+}
+
 func AssertEqualsInt(t testing.TB, expected, result int) {
 	t.Helper()
 

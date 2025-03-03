@@ -11,9 +11,7 @@ ObjectToConvertedObject
 
 func StringToInteger(s string) (int, error) {
 	i, err := strconv.Atoi(s)
-	if err != nil {
-		return i, err
-	}
+
 	return i, err
 }
 
