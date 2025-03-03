@@ -67,7 +67,7 @@ func TestAreEven(t *testing.T) {
 func TestConvertToInteger(t *testing.T) {
 	t.Run("Convert Valid String to Integer", func(t *testing.T) {
 		want := 1
-		get, err := ConvertToInteger("1")
+		get, err := StringToInteger("1")
 
 		AssertNoError(t, err)
 		AssertEqualsInt(t, want, get)
@@ -75,13 +75,13 @@ func TestConvertToInteger(t *testing.T) {
 
 	t.Run("Convert Float String to Integer", func(t *testing.T) {
 		want := strconv.ErrSyntax
-		_, got := ConvertToInteger("1.0")
+		_, got := StringToInteger("1.0")
 
 		AssertError(t, got, want)
 	})
 	t.Run("Convert Invalid String to Integer", func(t *testing.T) {
 		want := strconv.ErrSyntax
-		_, got := ConvertToInteger("Abba")
+		_, got := StringToInteger("Abba")
 
 		AssertError(t, got, want)
 	})

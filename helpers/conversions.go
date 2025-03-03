@@ -2,7 +2,14 @@ package helpers
 
 import "strconv"
 
-func ConvertToInteger(s string) (int, error) {
+/*
+All functions in this class must conform to the nomeclature:
+
+ObjectToConvertedObject
+
+*/
+
+func StringToInteger(s string) (int, error) {
 	i, err := strconv.Atoi(s)
 	if err != nil {
 		return i, err
