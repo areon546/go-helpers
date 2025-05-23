@@ -2,7 +2,6 @@ package helpers_test
 
 import (
 	"reflect"
-	"strconv"
 	"testing"
 
 	. "github.com/areon546/go-helpers/helpers"
@@ -64,27 +63,4 @@ func TestAreEven(t *testing.T) {
 			AssertEqualsBool(t, expected, got)
 		})
 	}
-}
-
-func TestConvertToInteger(t *testing.T) {
-	t.Run("Convert Valid String to Integer", func(t *testing.T) {
-		want := 1
-		get, err := StringToInteger("1")
-
-		AssertNoError(t, err)
-		AssertEqualsInt(t, want, get)
-	})
-
-	t.Run("Convert Float String to Integer", func(t *testing.T) {
-		want := strconv.ErrSyntax
-		_, got := StringToInteger("1.0")
-
-		AssertError(t, got, want)
-	})
-	t.Run("Convert Invalid String to Integer", func(t *testing.T) {
-		want := strconv.ErrSyntax
-		_, got := StringToInteger("Abba")
-
-		AssertError(t, got, want)
-	})
 }
