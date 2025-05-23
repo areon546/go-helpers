@@ -1,3 +1,3 @@
-module github.com/areon546/go-helpers
+module test
 
 go 1.24.0
