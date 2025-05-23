@@ -57,7 +57,7 @@ func AssertEqualsObject(t testing.TB, expected, result any) {
 
 	t.Log(expected, result)
 
-	t.Errorf("Variables are not equal, \nexpected: %s \nresult:   %s", expected, result)
+	t.Errorf("Variables are not equal, \nexpected: %s \n%t \nresult:   %s \n%t", expected, expected, result, result)
 }
 
 func AssertError(t testing.TB, got, want error) {
