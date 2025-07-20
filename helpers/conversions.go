@@ -1,6 +1,8 @@
 package helpers
 
-import "strconv"
+import (
+	"strconv"
+)
 
 /*
 All functions in this class must conform to the nomeclature:
@@ -18,6 +20,7 @@ func StringToInteger(s string) (int, error) {
 func BytesToString(b []byte) string {
 	return string(b)
 }
+
 func StringToBytes(s string) []byte {
 	return []byte(s)
 }
