@@ -34,7 +34,6 @@ func AssertEqualsInt(t testing.TB, expected, result int) {
 	t.Log(expected, result)
 
 	t.Errorf("Integers are not equal. \nexpected: %d \nresult: %d", expected, result)
-
 }
 
 func AssertEqualsBool(t testing.TB, expected, result bool) {
@@ -67,7 +66,6 @@ func AssertError(t testing.TB, got, want error) {
 	if !errors.Is(got, want) {
 		t.Fatalf("got error %q want %q", got, want)
 	}
-
 }
 
 func AssertNoError(t testing.TB, err error) {

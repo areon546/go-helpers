@@ -7,6 +7,8 @@ import (
 )
 
 // Do not recommend using this, unless you want the program to PANIC.
+// I use this method primarily so that I don't get 'unused variable err', and so that I know if an error occurs in a niche scenario.
+// Not recommended.
 func Handle(err error) {
 	if err != nil {
 		log.Fatal(err)

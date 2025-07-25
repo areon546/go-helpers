@@ -17,6 +17,10 @@ func StringToInteger(s string) (int, error) {
 	return i, err
 }
 
+func IntegerToString(i int) string {
+	return strconv.Itoa(i)
+}
+
 func BytesToString(b []byte) string {
 	return string(b)
 }

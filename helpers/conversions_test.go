@@ -21,6 +21,19 @@ func TestStringToInteger(t *testing.T) {
 
 		HandleExcept(err, want)
 	})
+
+	t.Run("Convert Float String to Integer", func(t *testing.T) {
+		want := strconv.ErrSyntax
+		_, got := StringToInteger("1.0")
+
+		AssertError(t, got, want)
+	})
+	t.Run("Convert Invalid String to Integer", func(t *testing.T) {
+		want := strconv.ErrSyntax
+		_, got := StringToInteger("Abba")
+
+		AssertError(t, got, want)
+	})
 }
 
 func TestBytesToString(t *testing.T) {
@@ -38,7 +51,6 @@ func TestBytesToString(t *testing.T) {
 }
 
 func TestStringToBytes(t *testing.T) {
-
 	t.Run("Str to Bytes", func(t *testing.T) {
 		str := "DRAGONS"
 
@@ -46,28 +58,5 @@ func TestStringToBytes(t *testing.T) {
 		want := []byte{68, 82, 65, 71, 79, 78, 83}
 
 		AssertEqualsObject(t, want, got)
-	})
-}
-
-func TestConvertToInteger(t *testing.T) {
-	t.Run("Convert Valid String to Integer", func(t *testing.T) {
-		want := 1
-		get, err := StringToInteger("1")
-
-		AssertNoError(t, err)
-		AssertEqualsInt(t, want, get)
-	})
-
-	t.Run("Convert Float String to Integer", func(t *testing.T) {
-		want := strconv.ErrSyntax
-		_, got := StringToInteger("1.0")
-
-		AssertError(t, got, want)
-	})
-	t.Run("Convert Invalid String to Integer", func(t *testing.T) {
-		want := strconv.ErrSyntax
-		_, got := StringToInteger("Abba")
-
-		AssertError(t, got, want)
 	})
 }
