@@ -1,6 +1,7 @@
 package helpers
 
 import (
+	"bytes"
 	"errors"
 	"fmt"
 	"reflect"
@@ -46,6 +47,18 @@ func AssertEqualsBool(t testing.TB, expected, result bool) {
 	t.Log(expected, result)
 
 	t.Errorf("Booleans are not equal. \nexpected: %t \nresult: %t", expected, result)
+}
+
+func AssertEqualsBytes(t testing.TB, expected, result []byte) {
+	t.Helper()
+
+	if bytes.Equal(expected, result) {
+		return
+	}
+
+	t.Log(expected, result)
+
+	t.Errorf("Byte slices are not equal. \nexpected: \n%s \nresult: \n%s", expected, result)
 }
 
 func AssertEqualsObject(t testing.TB, expected, result any) {
